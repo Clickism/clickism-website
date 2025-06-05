@@ -1,40 +1,82 @@
 .features {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding: 2rem 0;
     width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 1rem;
     padding: 3rem;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
+.header {
+    text-align: center;
 }
 
 .feature {
-    background-color: var(--hover-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: linear-gradient(135deg, var(--hover-color) 0%, var(--background-color) 100%);
     border-radius: 8px;
     margin: 1rem;
+    padding: 2rem;
+
+    border: 1px solid var(--hover-color);
+
+    transition: 0.2s;
 }
 
-.featureSvg {
+.feature:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.featureIcon {
     height: 100px;
     width: 100px;
+    margin: 0 1rem 1rem;
 }
 
 .buttonSecondary {
     background-color: transparent;
-    color: var(--ifm-color-primary-dark);
-    border-color: var(--ifm-color-primary-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--ifm-color-primary-darker);
+    border: 1px solid var(--ifm-color-primary-darker);
     width: fit-content;
-    margin: auto;
+    padding: 0.5rem;
+}
+
+.buttonSecondary:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.externalLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    margin-top: auto;
+}
+
+.mavenLink {
+    color: var(--maven-color);
+    border-color: var(--maven-color);
+}
+
+.modrinthLink {
+    color: var(--modrinth-color);
+    border-color: var(--modrinth-color);
+}
+
+.githubLink {
+    color: var(--github-color);
+    border-color: var(--github-color);
 }

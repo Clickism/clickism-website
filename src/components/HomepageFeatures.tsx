@@ -2,111 +2,161 @@ import type {ReactNode} from 'react';
 import Heading from '@theme/Heading';
 import Link from "@docusaurus/Link";
 import styles from "./HomepageFeatures.module.css"
+import clsx from "clsx";
+
+type ExternalLink = {
+  type: 'MODRINTH' | 'GITHUB' | 'DOCS' | 'MAVEN';
+  href: string;
+};
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  img: string;
   description: ReactNode;
-  docLink?: string;
+  links: ExternalLink[];
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'ClickVillagers',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    img: require('@site/static/img/projects/clickvillagers.webp').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        A simple Fabric mod/Spigot plugin that makes handling villagers a lot easier.
       </>
     ),
+    links: [
+      {type: 'MODRINTH', href: 'https://modrinth.com/plugin/clickvillagers'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/ClickVillagers'},
+    ]
   },
   {
     title: 'ClickMobs',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    img: require('@site/static/img/projects/clickmobs.webp').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        A simple Fabric mod/Spigot plugin that allows you to pick up any mob into your inventory.
       </>
     ),
-    docLink: '/docs/clickmobs/intro'
+    links: [
+      {type: 'MODRINTH', href: 'https://modrinth.com/plugin/clickmobs'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/ClickMobs'},
+      {type: 'DOCS', href: '/docs/clickmobs/intro'}
+    ]
   },
   {
     title: 'Configured',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    img: require('@site/static/img/projects/configured.webp').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Format-independent Java library for generating versioned, documented configuration files from code.
       </>
     ),
-    docLink: '/docs/configured/intro'
+    links: [
+      {type: 'MAVEN', href: 'https://central.sonatype.com/artifact/de.clickism/configured-core'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/Configured'},
+      {type: 'DOCS', href: '/docs/configured/intro'}
+    ]
   },
   {
     title: 'ClickShop',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    img: require('@site/static/img/projects/clickshop.webp').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        An innovative, highly customizable Spigot shop plugin.
       </>
     ),
+    links: [
+      {type: 'MODRINTH', href: 'https://modrinth.com/plugin/clickshop'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/ClickShop'},
+    ]
   },
   {
     title: 'ClickSigns',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    img: require('@site/static/img/projects/clicksigns.webp').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        An innovative Fabric mod that lets you create custom highway & street signs!
       </>
     ),
-    docLink: '/docs/clicksigns/intro'
+    links: [
+      {type: 'MODRINTH', href: 'https://modrinth.com/mod/clicksigns'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/ClickSigns'},
+      {type: 'DOCS', href: '/docs/clicksigns/intro'}
+    ]
   },
   {
     title: 'Modrinth Update Checker',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    img: require('@site/static/img/projects/modrinth_update_checker.webp').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Single class Java library to check for newer versions of projects on Modrinth using the Modrinth API.
       </>
     ),
+    links: [
+      {type: 'MAVEN', href: 'https://central.sonatype.com/artifact/de.clickism/modrinth-update-checker'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/ModrinthUpdateChecker'},
+    ]
+  },
+  {
+    title: 'Variant Brush',
+    img: require('@site/static/img/projects/variantbrush.webp').default,
+    description: (
+      <>
+        A simple Fabric mod/Spigot plugin to easily change farm animal variants using a brush.
+      </>
+    ),
+    links: [
+      {type: 'MODRINTH', href: 'https://modrinth.com/plugin/variant-brush'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/VariantBrush'},
+    ]
   },
 ];
 
-function Feature({title, Svg, description, docLink}: FeatureItem) {
+function ExternalLinks(props: { links: ExternalLink[] }) {
+  return (
+    <div className={styles.externalLinks}>
+      {props.links.map(link => (
+        <Link className={clsx('button', styles.buttonSecondary,
+          (link.type === 'MODRINTH' && styles.modrinthLink),
+          (link.type === 'MAVEN' && styles.mavenLink),
+          (link.type === 'GITHUB' && styles.githubLink),
+        )}
+              key={link.href} href={link.href}>
+          {link.type === 'GITHUB' && 'GitHub'}
+          {link.type === 'MODRINTH' && 'Modrinth'}
+          {link.type === 'DOCS' && 'Docs'}
+          {link.type === 'MAVEN' && 'Maven'}
+          {link.type !== 'DOCS' &&
+            <svg width="13.5" height="13.5" aria-hidden="true" className="iconExternalLink_nPIU">
+              <use href="#theme-svg-external-link"></use>
+            </svg>
+          }
+        </Link>
+      ))}
+    </div>
+  )
+}
+
+function Feature({title, img, description, links}: FeatureItem) {
   return (
     <div className={styles.feature}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img"/>
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-      {docLink && (
-        <Link
-          className={`button ${styles.buttonSecondary}`}
-          to={docLink}>
-          Documentation
-        </Link>
-      )}
+      <img className={styles.featureIcon} role="img" src={img} alt="project icon"/>
+      <Heading as="h3" className={styles.header}>{title}</Heading>
+      <p>{description}</p>
+      <ExternalLinks links={links}/>
     </div>
-  );
+  )
 }
 
 export default function HomepageFeatures(): ReactNode {
   return (
-    <section className={styles.features}>
+    <div className={styles.features}>
       <div className={styles.container}>
-        <div className={styles.row}>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

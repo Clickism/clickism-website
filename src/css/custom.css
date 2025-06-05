@@ -20,6 +20,9 @@
   --background-color: rgb(20, 20, 20);
   --hover-color: rgb(255, 255, 255, 0.1);
   --text-color: rgb(227, 227, 227);
+  --modrinth-color: rgb(99, 213, 131);
+  --maven-color: rgb(232, 202, 54);
+  --github-color: rgb(100, 89, 255);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
