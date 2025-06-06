@@ -6,84 +6,85 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #4f90f4;
-  --ifm-color-primary-dark: #004dc1;
-  --ifm-color-primary-darker: #0049b6;
-  --ifm-color-primary-darkest: #003c96;
-  --ifm-color-primary-light: #005feb;
-  --ifm-color-primary-lighter: #0063f6;
-  --ifm-color-primary-lightest: #1774ff;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  /*todo: light mode*/
-  --footer-color: rgba(214, 214, 214, 0.2);
-  --navbar-color: rgba(253, 253, 253, 0.8);
-  --background-color: rgb(255, 255, 255);
-  --hover-color: rgba(0, 0, 0, 0.1);
-  --border-color: rgb(70, 70, 70);
-  --text-color: rgb(9, 9, 9);
-  --footer-text-color: rgb(99, 99, 99);
-  --modrinth-color: rgb(82, 191, 115);
-  --maven-color: rgb(244, 141, 67);
-  --github-color: rgb(100, 89, 255);
+    --ifm-color-primary: #4f90f4;
+    --ifm-color-primary-dark: #004dc1;
+    --ifm-color-primary-darker: #0049b6;
+    --ifm-color-primary-darkest: #003c96;
+    --ifm-color-primary-light: #005feb;
+    --ifm-color-primary-lighter: #0063f6;
+    --ifm-color-primary-lightest: #1774ff;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    /*todo: light mode*/
+    --footer-color: rgba(214, 214, 214, 0.2);
+    --navbar-color: rgba(253, 253, 253, 0.8);
+    --background-color: rgb(255, 255, 255);
+    --hover-color: rgba(0, 0, 0, 0.1);
+    --border-color: rgb(70, 70, 70);
+    --text-color: rgb(9, 9, 9);
+    --footer-text-color: rgb(99, 99, 99);
+    --modrinth-color: rgb(82, 191, 115);
+    --maven-color: rgb(244, 141, 67);
+    --github-color: rgb(100, 89, 255);
 
-  --max-width: 1600px;
+    --max-width: 1600px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #74a7fe;
-  --ifm-color-primary-dark: #4f90fe;
-  --ifm-color-primary-darker: #3d84fe;
-  --ifm-color-primary-darkest: #0661fd;
-  --ifm-color-primary-light: #99befe;
-  --ifm-color-primary-lighter: #abcafe;
-  --ifm-color-primary-lightest: #e2edff;
+    --ifm-color-primary: #74a7fe;
+    --ifm-color-primary-dark: #4f90fe;
+    --ifm-color-primary-darker: #3d84fe;
+    --ifm-color-primary-darkest: #0661fd;
+    --ifm-color-primary-light: #99befe;
+    --ifm-color-primary-lighter: #abcafe;
+    --ifm-color-primary-lightest: #e2edff;
 
-  --footer-color: rgba(0, 0, 0, 0.2);
-  --navbar-color: rgba(0, 0, 0, 0.8);
-  --background-color: rgb(20, 20, 20);
-  --hover-color: rgb(255, 255, 255, 0.1);
-  --border-color: rgb(70, 70, 70);
-  --text-color: rgb(227, 227, 227);
-  --footer-text-color: rgb(126, 126, 126);
-  --modrinth-color: rgb(99, 213, 131);
-  --maven-color: rgb(232, 202, 54);
-  --github-color: rgb(100, 89, 255);
+    --footer-color: rgba(0, 0, 0, 0.2);
+    --navbar-color: rgba(0, 0, 0, 0.8);
+    --background-color: rgb(20, 20, 20);
+    --hover-color: rgb(255, 255, 255, 0.1);
+    --border-color: rgb(70, 70, 70);
+    --text-color: rgb(227, 227, 227);
+    --footer-text-color: rgb(126, 126, 126);
+    --modrinth-color: rgb(99, 213, 131);
+    --maven-color: rgb(232, 202, 54);
+    --github-color: rgb(100, 89, 255);
 }
+
 [data-theme='dark'] {
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 .footer {
-  padding: 1rem;
-  background-color: var(--footer-color);
+    padding: 1rem;
+    background-color: var(--footer-color);
 }
 
 .theme-layout-navbar {
-  background-color: var(--navbar-color);
+    background-color: var(--navbar-color);
 }
 
 .theme-layout-main {
-  background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 
 .navbar {
-  border-bottom: 1px solid var(--hover-color);
+    border-bottom: 1px solid var(--hover-color);
 }
 
 .cool-button {
-  background-color: transparent;
-  color: var(--ifm-color-primary-darker);
-  border: 1px solid var(--ifm-color-primary-darker);
-  width: fit-content;
-  padding: 0.5rem;
+    background-color: transparent;
+    color: var(--ifm-color-primary-darker);
+    border: 1px solid var(--ifm-color-primary-darker);
+    width: fit-content;
+    padding: 0.5rem;
 }
 
 .cool-button:hover {
-  background-color: var(--hover-color) !important;
-  color: var(--text-color) !important;
-  border-color: var(--text-color) !important;
+    background-color: var(--hover-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
 }
 
 .footer__copyright {

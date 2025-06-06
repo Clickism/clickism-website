@@ -1,20 +1,10 @@
 import Heading from "@theme/Heading";
 import styles from "./SkillSection.module.css";
-import {DiJava, DiReact, DiSqllite} from "react-icons/di";
-import {
-  SiAssemblyscript,
-  SiC,
-  SiJavascript,
-  SiKotlin,
-  SiRiscv,
-  SiRust,
-  SiSpringboot,
-  SiTypescript
-} from "react-icons/si";
+import {DiJava, DiReact} from "react-icons/di";
+import {SiC, SiJavascript, SiKotlin, SiRiscv, SiRust, SiSpringboot, SiTypescript} from "react-icons/si";
 import React, {ReactNode} from "react";
 import clsx from "clsx";
-import {TbAssembly, TbSql} from "react-icons/tb";
-import {AiOutlineConsoleSql} from "react-icons/ai";
+import {TbSql} from "react-icons/tb";
 import {FaLaptopCode} from "react-icons/fa";
 
 type Skill = {

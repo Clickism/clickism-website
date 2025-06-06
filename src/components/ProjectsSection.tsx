@@ -3,8 +3,6 @@ import Heading from '@theme/Heading';
 import Link from "@docusaurus/Link";
 import styles from "./ProjectsSection.module.css"
 import clsx from "clsx";
-import {IoBook} from "react-icons/io5";
-import {FaBook} from "react-icons/fa";
 import {MdOutlineLibraryBooks} from "react-icons/md";
 
 type ExternalLink = {
