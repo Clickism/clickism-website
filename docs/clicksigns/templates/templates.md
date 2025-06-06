@@ -197,7 +197,7 @@ Another powerful feature of ClickSigns is the ability to write on your signs
 }
 ```
 
-> See [TextPositions Reference](#textposition) for a more detailed explanation
+> See [TextPositions Reference](references.md#textposition) for a more detailed explanation
 
 #### Variants
 

@@ -74,30 +74,42 @@ const config: Config = {
         src: 'img/logo.png',
       },
       items: [
+        {
+          label: 'Documentation',
+          position: 'left',
+          items: [
+            {
+              label: 'Configured',
+              to: '/docs/configured/getting-started',
+            },
+            {
+              label: 'ClickMobs',
+              to: '/docs/clickmobs/getting-started',
+            },
+            {
+              label: 'ClickSigns',
+              to: '/docs/clicksigns/getting-started',
+            },
+          ],
+        },
         // {
         //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
+        //   sidebarId: 'configuredSidebar',
         //   position: 'left',
-        //   label: 'Tutorial',
+        //   label: 'Configured',
         // },
-        {
-          type: 'docSidebar',
-          sidebarId: 'configuredSidebar',
-          position: 'left',
-          label: 'Configured',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'clickMobsSidebar',
-          position: 'left',
-          label: 'ClickMobs',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'clickSignsSidebar',
-          position: 'left',
-          label: 'ClickSigns',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'clickMobsSidebar',
+        //   position: 'left',
+        //   label: 'ClickMobs',
+        // },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'clickSignsSidebar',
+        //   position: 'left',
+        //   label: 'ClickSigns',
+        // },
         //{to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/Clickism',
@@ -147,6 +159,10 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.oneDark,
+      additionalLanguages: [
+        'java',
+        'kotlin',
+      ]
     },
   } satisfies Preset.ThemeConfig,
 };
