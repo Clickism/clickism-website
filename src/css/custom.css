@@ -100,6 +100,10 @@
     backdrop-filter: blur(5px);
 }
 
+.navbar-sidebar--show {
+    backdrop-filter: none !important;
+}
+
 .theme-layout-main {
     background-color: var(--background-color);
 }
@@ -141,6 +145,11 @@
 
 .theme-doc-markdown img {
     border-radius: 1rem;
+}
+
+.navbar-sidebar {
+    z-index: 1000;
+    position: fixed;
 }
 
 /*.navbar__item {*/
