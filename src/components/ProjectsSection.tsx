@@ -43,7 +43,7 @@ const FeatureList: FeatureItem[] = [
     links: [
       {type: 'MODRINTH', href: 'https://modrinth.com/plugin/clickmobs'},
       {type: 'GITHUB', href: 'https://github.com/Clickism/ClickMobs'},
-      {type: 'DOCS', href: '/docs/clickmobs/intro'}
+      {type: 'DOCS', href: '/docs/clickmobs/getting-started'}
     ]
   },
   {
@@ -57,7 +57,7 @@ const FeatureList: FeatureItem[] = [
     links: [
       {type: 'MAVEN', href: 'https://central.sonatype.com/artifact/de.clickism/configured-core'},
       {type: 'GITHUB', href: 'https://github.com/Clickism/Configured'},
-      {type: 'DOCS', href: '/docs/configured/intro'}
+      {type: 'DOCS', href: '/docs/configured/getting-started'}
     ]
   },
   {
@@ -84,7 +84,7 @@ const FeatureList: FeatureItem[] = [
     links: [
       {type: 'MODRINTH', href: 'https://modrinth.com/mod/clicksigns'},
       {type: 'GITHUB', href: 'https://github.com/Clickism/ClickSigns'},
-      {type: 'DOCS', href: '/docs/clicksigns/intro'}
+      {type: 'DOCS', href: '/docs/clicksigns/getting-started'}
     ]
   },
   {
