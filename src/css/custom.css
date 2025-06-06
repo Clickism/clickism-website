@@ -28,6 +28,19 @@
     --github-color: rgb(100, 89, 255);
 
     --max-width: 1300px;
+
+    --skill-java: rgb(230, 80, 0);
+    --skill-kotlin: rgb(110, 50, 200);
+    --skill-c: rgb(0, 102, 204);
+    --skill-rust: rgb(210, 90, 40);
+    --skill-springboot: rgb(40, 170, 40);
+    --skill-javascript: rgb(223, 160, 26);
+    --skill-typescript: rgb(0, 90, 160);
+    --skill-react: rgb(0, 180, 220);
+    --skill-sql: rgb(0, 102, 204);
+    --skill-riscv: rgb(200, 90, 20);
+    --skill-mips: rgb(230, 120, 0);
+    --skill-java-fx: rgb(191, 49, 121);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -50,6 +63,19 @@
     --modrinth-color: rgb(99, 213, 131);
     --maven-color: rgb(232, 202, 54);
     --github-color: rgb(100, 89, 255);
+
+    --skill-java: rgb(255, 160, 112);
+    --skill-kotlin: rgb(180, 120, 255);
+    --skill-c: rgb(100, 180, 255);
+    --skill-rust: rgb(255, 180, 120);
+    --skill-springboot: rgb(120, 255, 120);
+    --skill-javascript: rgb(255, 211, 100);
+    --skill-typescript: rgb(100, 180, 255);
+    --skill-react: rgb(150, 240, 255);
+    --skill-sql: rgb(100, 180, 255);
+    --skill-riscv: rgb(255, 180, 120);
+    --skill-mips: rgb(255, 200, 120);
+    --skill-java-fx: rgb(228, 67, 148);
 }
 
 [data-theme='dark'] {
@@ -88,8 +114,10 @@
     color: var(--footer-text-color) !important;
 }
 
-.navbar {
-
+.main-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 /*.navbar__item {*/

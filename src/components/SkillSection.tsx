@@ -18,98 +18,98 @@ const skills: Skill[] = [
     name: "Java",
     icon: <DiJava/>,
     css: {
-      color: "rgb(255,112,62)",
-      borderColor: "rgb(255,112,62)",
+      color: "var(--skill-java)",
+      borderColor: "var(--skill-java)",
     }
   },
   {
     name: "Kotlin",
     icon: <SiKotlin/>,
     css: {
-      color: "rgb(140,68,253)",
-      borderColor: "rgb(140,68,253)",
+      color: "var(--skill-kotlin)",
+      borderColor: "var(--skill-kotlin)",
     }
   },
   {
     name: "C",
     icon: <SiC/>,
     css: {
-      color: "rgb(0,123,255)",
-      borderColor: "rgb(0,123,255)",
+      color: "var(--skill-c)",
+      borderColor: "var(--skill-c)",
     }
   },
   {
     name: "Rust",
     icon: <SiRust/>,
     css: {
-      color: "rgb(255,127,80)",
-      borderColor: "rgb(255,127,80)",
+      color: "var(--skill-rust)",
+      borderColor: "var(--skill-rust)",
     }
   },
   {
     name: "Spring Boot",
     icon: <SiSpringboot/>,
     css: {
-      color: "rgb(68,216,68)",
-      borderColor: "rgb(68,216,68)",
+      color: "var(--skill-springboot)",
+      borderColor: "var(--skill-springboot)",
     }
   },
   {
     name: "JavaScript",
     icon: <SiJavascript/>,
     css: {
-      color: "rgb(255,221,51)",
-      borderColor: "rgb(255,221,51)",
+      color: "var(--skill-javascript)",
+      borderColor: "var(--skill-javascript)",
     }
   },
   {
     name: "TypeScript",
     icon: <SiTypescript/>,
     css: {
-      color: "rgb(0,122,204)",
-      borderColor: "rgb(0,122,204)",
+      color: "var(--skill-typescript)",
+      borderColor: "var(--skill-typescript)",
     }
   },
   {
     name: "React",
     icon: <DiReact/>,
     css: {
-      color: "rgb(97,218,251)",
-      borderColor: "rgb(97,218,251)",
+      color: "var(--skill-react)",
+      borderColor: "var(--skill-react)",
     }
   },
   {
     name: "SQL",
     icon: <TbSql/>,
     css: {
-      color: "rgb(0,123,255)",
-      borderColor: "rgb(0,123,255)",
+      color: "var(--skill-sql)",
+      borderColor: "var(--skill-sql)",
     }
   },
   {
     name: "RISC-V",
     icon: <SiRiscv/>,
     css: {
-      color: "rgb(223,118,51)",
-      borderColor: "rgb(223,118,51)",
+      color: "var(--skill-riscv)",
+      borderColor: "var(--skill-riscv)",
     }
   },
   {
     name: "MIPS",
     icon: <FaLaptopCode/>,
     css: {
-      color: "rgb(255,165,62)",
-      borderColor: "rgb(255,165,62)",
+      color: "var(--skill-mips)",
+      borderColor: "var(--skill-mips)",
     }
   },
-  // {
-  //   name: "JavaFX",
-  //   icon: <DiJava/>,
-  //   css: {
-  //     color: "rgb(255,69,2)",
-  //     borderColor: "rgb(255,69,2)",
-  //   }
-  // }
+  {
+    name: "JavaFX",
+    icon: <DiJava/>,
+    css: {
+      color: "var(--skill-java-fx)",
+      borderColor: "var(--skill-java-fx)",
+    }
+  }
 ];
 
 function SkillList() {
