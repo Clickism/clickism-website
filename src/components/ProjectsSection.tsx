@@ -154,7 +154,9 @@ function Feature({title, img, description, links}: FeatureItem) {
 export default function ProjectsSection(): ReactNode {
   return (
     <div className={styles.features}>
-      <Heading as="h1">My Projects</Heading>
+      <div className={styles.textContainer}>
+        <Heading as="h1">My Projects</Heading>
+      </div>
       <div className={styles.container}>
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />

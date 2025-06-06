@@ -80,3 +80,7 @@
     color: var(--github-color);
     border-color: var(--github-color);
 }
+
+.textContainer {
+    margin: 0 4rem;
+}

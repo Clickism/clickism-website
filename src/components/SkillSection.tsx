@@ -98,10 +98,18 @@ const skills: Skill[] = [
     name: "MIPS",
     icon: <FaLaptopCode/>,
     css: {
-      color: "rgb(255,112,62)",
-      borderColor: "rgb(255,112,62)",
+      color: "rgb(255,165,62)",
+      borderColor: "rgb(255,165,62)",
     }
-  }
+  },
+  // {
+  //   name: "JavaFX",
+  //   icon: <DiJava/>,
+  //   css: {
+  //     color: "rgb(255,69,2)",
+  //     borderColor: "rgb(255,69,2)",
+  //   }
+  // }
 ];
 
 function SkillList() {

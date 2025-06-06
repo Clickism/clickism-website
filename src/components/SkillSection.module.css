@@ -2,11 +2,13 @@
     width: 100%;
     max-width: var(--max-width);
     margin: 1rem auto;
+    padding: 1rem 4rem;
 }
 
 .skillList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: start;
     align-items: flex-start;
     gap: 1rem;
