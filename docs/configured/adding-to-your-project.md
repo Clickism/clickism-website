@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
+title: Adding to Your Project
 ---
-# Adding to your Project 📦
+# Adding to Your Project 📦
 Configured is available on **Maven Central**, so you can easily add it to your project
 using Maven or Gradle.
 
