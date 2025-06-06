@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Tags (Predicates)
 You can use tags to blacklist/whitelist mobs with certain properties.
 Combining tags alongside negating them gives you a powerful filtering tool, to only

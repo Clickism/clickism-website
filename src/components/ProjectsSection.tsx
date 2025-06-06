@@ -3,6 +3,9 @@ import Heading from '@theme/Heading';
 import Link from "@docusaurus/Link";
 import styles from "./ProjectsSection.module.css"
 import clsx from "clsx";
+import {IoBook} from "react-icons/io5";
+import {FaBook} from "react-icons/fa";
+import {MdOutlineLibraryBooks} from "react-icons/md";
 
 type ExternalLink = {
   type: 'MODRINTH' | 'GITHUB' | 'DOCS' | 'MAVEN';
@@ -125,7 +128,8 @@ function ExternalLinks(props: { links: ExternalLink[] }) {
               key={link.href} href={link.href}>
           {link.type === 'GITHUB' && 'GitHub'}
           {link.type === 'MODRINTH' && 'Modrinth'}
-          {link.type === 'DOCS' && 'Docs'}
+          {link.type === 'DOCS' && 'Docs '}
+          {link.type === 'DOCS' && <MdOutlineLibraryBooks/>}
           {link.type === 'MAVEN' && 'Maven'}
           {link.type !== 'DOCS' &&
             <svg width="13.5" height="13.5" aria-hidden="true" className="iconExternalLink_nPIU">

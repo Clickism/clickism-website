@@ -15,14 +15,16 @@
   --ifm-color-primary-lightest: #1774ff;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --footer-color: rgba(0, 0, 0, 0.2);
-  --navbar-color: rgba(0, 0, 0, 0.8);
-  --background-color: rgb(20, 20, 20);
-  --hover-color: rgb(255, 255, 255, 0.1);
+  /*todo: light mode*/
+  --footer-color: rgba(214, 214, 214, 0.2);
+  --navbar-color: rgba(253, 253, 253, 0.8);
+  --background-color: rgb(255, 255, 255);
+  --hover-color: rgba(0, 0, 0, 0.1);
   --border-color: rgb(70, 70, 70);
-  --text-color: rgb(227, 227, 227);
-  --modrinth-color: rgb(99, 213, 131);
-  --maven-color: rgb(232, 202, 54);
+  --text-color: rgb(9, 9, 9);
+  --footer-text-color: rgb(99, 99, 99);
+  --modrinth-color: rgb(82, 191, 115);
+  --maven-color: rgb(244, 141, 67);
   --github-color: rgb(100, 89, 255);
 
   --max-width: 1600px;
@@ -37,7 +39,17 @@
   --ifm-color-primary-light: #99befe;
   --ifm-color-primary-lighter: #abcafe;
   --ifm-color-primary-lightest: #e2edff;
-  /*todo: light mode*/
+
+  --footer-color: rgba(0, 0, 0, 0.2);
+  --navbar-color: rgba(0, 0, 0, 0.8);
+  --background-color: rgb(20, 20, 20);
+  --hover-color: rgb(255, 255, 255, 0.1);
+  --border-color: rgb(70, 70, 70);
+  --text-color: rgb(227, 227, 227);
+  --footer-text-color: rgb(126, 126, 126);
+  --modrinth-color: rgb(99, 213, 131);
+  --maven-color: rgb(232, 202, 54);
+  --github-color: rgb(100, 89, 255);
 }
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -72,6 +84,10 @@
   background-color: var(--hover-color) !important;
   color: var(--text-color) !important;
   border-color: var(--text-color) !important;
+}
+
+.footer__copyright {
+    color: var(--footer-text-color) !important;
 }
 
 /*.navbar__item {*/
