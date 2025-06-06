@@ -18,7 +18,7 @@
 }
 
 .icon {
-    box-shadow: 0 0 96px 8px rgba(79, 144, 244, 1);
+    box-shadow: 0 0 96px 8px rgb(137, 196, 255);
     border-radius: 50%;
     transition: box-shadow 0.2s;
     margin-right: 2rem;
@@ -28,4 +28,8 @@
     @media (max-width: 996px) {
         display: none;
     }
+}
+
+[data-theme='dark'] .icon {
+    box-shadow: 0 0 96px 8px rgba(79, 144, 244, 1);
 }
