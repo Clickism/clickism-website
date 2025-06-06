@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout
       title="Clickism"
-      description="">
+      description="Personal website showcasing my skills, projects, and documentation for some of my projects.">
       <InfoSection/>
       <MainContent>
         <SkillSection/>

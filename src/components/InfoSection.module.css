@@ -10,7 +10,11 @@
 .line {
     display: flex;
     flex-direction: row;
+    align-items: center;
     max-width: 800px;
+    @media (max-width: 996px) {
+        flex-direction: column;
+    }
 }
 
 .icon {
@@ -18,6 +22,10 @@
     border-radius: 50%;
     transition: box-shadow 0.2s;
     margin-right: 2rem;
+    margin-bottom: 2rem;
     width: 256px;
     height: 256px;
+    @media (max-width: 996px) {
+        display: none;
+    }
 }

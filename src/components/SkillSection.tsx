@@ -1,11 +1,10 @@
 import Heading from "@theme/Heading";
 import styles from "./SkillSection.module.css";
-import {DiJava, DiReact} from "react-icons/di";
-import {SiC, SiJavascript, SiKotlin, SiRiscv, SiRust, SiSpringboot, SiTypescript} from "react-icons/si";
+import {DiCss3Full, DiHtml5, DiJava, DiReact} from "react-icons/di";
+import {SiC, SiGradle, SiJavascript, SiKotlin, SiRiscv, SiRust, SiSpringboot, SiTypescript} from "react-icons/si";
 import React, {ReactNode} from "react";
 import clsx from "clsx";
 import {TbSql} from "react-icons/tb";
-import {FaLaptopCode} from "react-icons/fa";
 
 type Skill = {
   name: string;
@@ -94,14 +93,14 @@ const skills: Skill[] = [
       borderColor: "var(--skill-riscv)",
     }
   },
-  {
-    name: "MIPS",
-    icon: <FaLaptopCode/>,
-    css: {
-      color: "var(--skill-mips)",
-      borderColor: "var(--skill-mips)",
-    }
-  },
+  // {
+  //   name: "MIPS",
+  //   icon: <FaLaptopCode/>,
+  //   css: {
+  //     color: "var(--skill-mips)",
+  //     borderColor: "var(--skill-mips)",
+  //   }
+  // },
   {
     name: "JavaFX",
     icon: <DiJava/>,
@@ -109,7 +108,31 @@ const skills: Skill[] = [
       color: "var(--skill-java-fx)",
       borderColor: "var(--skill-java-fx)",
     }
-  }
+  },
+  {
+    name: "Gradle",
+    icon: <SiGradle/>,
+    css: {
+      color: "var(--skill-gradle)",
+      borderColor: "var(--skill-gradle)",
+    }
+  },
+  {
+    name: "HTML",
+    icon: <DiHtml5/>,
+    css: {
+      color: "var(--skill-html)",
+      borderColor: "var(--skill-html)",
+    }
+  },
+  {
+    name: "CSS",
+    icon: <DiCss3Full/>,
+    css: {
+      color: "var(--skill-css)",
+      borderColor: "var(--skill-css)",
+    }
+  },
 ];
 
 function SkillList() {
@@ -141,7 +164,9 @@ export default function SkillSection() {
       <Heading as="h1">
         My Skills
       </Heading>
-      <p>I have worked with several technologies throughout my development journey, such as:</p>
+      <p>
+        Here are some of the tools and technologies I have worked with:
+      </p>
       <SkillList/>
     </div>
   )

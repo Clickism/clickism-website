@@ -15,12 +15,15 @@ export default function InfoSection() {
           <p>
             I'm a 19-year-old developer currently studying Computer Science in Germany.
 
-            I enjoy exploring a variety of fields, including game modding with Java and Kotlin, frontend development
-            with React and TypeScript, and backend development with Java, Spring Boot and SQL.
+            I enjoy exploring a variety of fields, including game modding with <strong>Java</strong>, frontend development
+            with <strong>React</strong> and <strong>TypeScript</strong>, and backend development
+            with <strong>Java</strong>, <strong>Spring Boot</strong> and <strong>SQL</strong>.
 
-            I'm also passionate about low-level programming with C, Rust, and Assembly.
+            I'm also passionate about low-level programming with <strong>C</strong>, <strong>Rust</strong>, and <strong>Assembly</strong>.
+          </p>
+          <p>
             My main interests lie in building tools and libraries that make development easier and more enjoyable
-            for others, as well as compiler design and systems programming.
+            for others, as well as full-stack development, compiler design and game development.
           </p>
         </div>
       </div>

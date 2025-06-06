@@ -20,6 +20,7 @@
     --footer-color: rgba(214, 214, 214, 0.2);
     --navbar-color: rgba(253, 253, 253, 0.8);
     --background-color: rgb(255, 255, 255);
+    --solid-hover-color: rgb(50, 49, 49);
     --hover-color: rgba(0, 0, 0, 0.1);
     --border-color: rgb(70, 70, 70);
     --text-color: rgb(9, 9, 9);
@@ -41,6 +42,9 @@
     --skill-riscv: rgb(200, 90, 20);
     --skill-mips: rgb(230, 120, 0);
     --skill-java-fx: rgb(191, 49, 121);
+    --skill-html: rgb(255, 100, 100);
+    --skill-css: rgb(100, 100, 255);
+    --skill-gradle: rgb(44, 100, 211);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -77,6 +81,9 @@
     --skill-riscv: rgb(255, 180, 120);
     --skill-mips: rgb(255, 200, 120);
     --skill-java-fx: rgb(228, 67, 148);
+    --skill-html: rgb(255, 100, 100);
+    --skill-css: rgb(100, 100, 255);
+    --skill-gradle: rgb(72, 130, 241);
 }
 
 [data-theme='dark'] {
@@ -119,6 +126,21 @@
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 1rem;
+}
+
+.dropdown__menu {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    border: 1px solid var(--hover-color);
+}
+
+.dropdown__link {
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.theme-doc-markdown img {
+    border-radius: 1rem;
 }
 
 /*.navbar__item {*/
