@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import styles from "./ProjectsSection.module.css"
 import clsx from "clsx";
 import {MdOutlineLibraryBooks} from "react-icons/md";
+import LinkIcon from "@site/src/components/LinkIcon";
 
 type ExternalLink = {
   type: 'MODRINTH' | 'GITHUB' | 'DOCS' | 'MAVEN';
@@ -114,29 +115,22 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function ExternalLinks(props: { links: ExternalLink[] }) {
+function ExternalLink(props: { link: ExternalLink }) {
+  const link = props.link;
   return (
-    <div className={styles.externalLinks}>
-      {props.links.map(link => (
-        <Link className={clsx('button', styles.buttonSecondary,
-          (link.type === 'MODRINTH' && styles.modrinthLink),
-          (link.type === 'MAVEN' && styles.mavenLink),
-          (link.type === 'GITHUB' && styles.githubLink),
-        )}
-              key={link.href} href={link.href}>
-          {link.type === 'GITHUB' && 'GitHub'}
-          {link.type === 'MODRINTH' && 'Modrinth'}
-          {link.type === 'DOCS' && 'Docs '}
-          {link.type === 'DOCS' && <MdOutlineLibraryBooks/>}
-          {link.type === 'MAVEN' && 'Maven'}
-          {link.type !== 'DOCS' &&
-            <svg width="13.5" height="13.5" aria-hidden="true" className="iconExternalLink_nPIU">
-              <use href="#theme-svg-external-link"></use>
-            </svg>
-          }
-        </Link>
-      ))}
-    </div>
+    <Link className={clsx('button', styles.buttonSecondary,
+      (link.type === 'MODRINTH' && styles.modrinthLink),
+      (link.type === 'MAVEN' && styles.mavenLink),
+      (link.type === 'GITHUB' && styles.githubLink),
+    )}
+          href={link.href}>
+      {link.type === 'GITHUB' && 'GitHub'}
+      {link.type === 'MODRINTH' && 'Modrinth'}
+      {link.type === 'DOCS' && 'Docs '}
+      {link.type === 'DOCS' && <MdOutlineLibraryBooks/>}
+      {link.type === 'MAVEN' && 'Maven'}
+      {link.type !== 'DOCS' && <LinkIcon/>}
+    </Link>
   )
 }
 
@@ -146,7 +140,11 @@ function Feature({title, img, description, links}: FeatureItem) {
       <img className={styles.featureIcon} role="img" src={img} alt="project icon"/>
       <Heading as="h3" className={styles.header}>{title}</Heading>
       <p>{description}</p>
-      <ExternalLinks links={links}/>
+      <div className={styles.externalLinks}>
+        {links.map(link => (
+          <ExternalLink link={link} key={link.href}/>
+        ))}
+      </div>
     </div>
   )
 }
@@ -156,6 +154,10 @@ export default function ProjectsSection(): ReactNode {
     <div className={styles.features}>
       <div className={styles.textContainer}>
         <Heading as="h1">My Projects</Heading>
+        <p>
+          Here are some of my projects that I have worked on.
+          You can find more on my <Link href='https://github.com/Clickism'>GitHub.</Link>
+        </p>
       </div>
       <div className={styles.container}>
         {FeatureList.map((props, idx) => (

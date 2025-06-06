@@ -15,7 +15,8 @@
     --ifm-color-primary-lightest: #1774ff;
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-    /*todo: light mode*/
+    --max-width: 1300px;
+
     --footer-color: rgba(214, 214, 214, 0.2);
     --navbar-color: rgba(253, 253, 253, 0.8);
     --background-color: rgb(255, 255, 255);
@@ -23,12 +24,11 @@
     --border-color: rgb(70, 70, 70);
     --text-color: rgb(9, 9, 9);
     --footer-text-color: rgb(99, 99, 99);
-    --modrinth-color: rgb(82, 191, 115);
+    --modrinth-color: rgb(22, 184, 67);
     --maven-color: rgb(244, 141, 67);
     --github-color: rgb(100, 89, 255);
 
-    --max-width: 1300px;
-
+    /* Skill colors */
     --skill-java: rgb(230, 80, 0);
     --skill-kotlin: rgb(110, 50, 200);
     --skill-c: rgb(0, 102, 204);
@@ -61,9 +61,10 @@
     --text-color: rgb(227, 227, 227);
     --footer-text-color: rgb(126, 126, 126);
     --modrinth-color: rgb(99, 213, 131);
-    --maven-color: rgb(232, 202, 54);
+    --maven-color: rgb(244, 156, 67);
     --github-color: rgb(100, 89, 255);
 
+    /* Skill colors */
     --skill-java: rgb(255, 160, 112);
     --skill-kotlin: rgb(180, 120, 255);
     --skill-c: rgb(100, 180, 255);
