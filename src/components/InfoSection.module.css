@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 5rem;
+    padding: 3rem;
     background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--background-color) 100%);
 }
 
