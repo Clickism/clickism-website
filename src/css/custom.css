@@ -19,10 +19,13 @@
   --navbar-color: rgba(0, 0, 0, 0.8);
   --background-color: rgb(20, 20, 20);
   --hover-color: rgb(255, 255, 255, 0.1);
+  --border-color: rgb(70, 70, 70);
   --text-color: rgb(227, 227, 227);
   --modrinth-color: rgb(99, 213, 131);
   --maven-color: rgb(232, 202, 54);
   --github-color: rgb(100, 89, 255);
+
+  --max-width: 1600px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -51,6 +54,24 @@
 
 .theme-layout-main {
   background-color: var(--background-color);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--hover-color);
+}
+
+.cool-button {
+  background-color: transparent;
+  color: var(--ifm-color-primary-darker);
+  border: 1px solid var(--ifm-color-primary-darker);
+  width: fit-content;
+  padding: 0.5rem;
+}
+
+.cool-button:hover {
+  background-color: var(--hover-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
 }
 
 /*.navbar__item {*/

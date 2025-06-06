@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react';
 import Heading from '@theme/Heading';
 import Link from "@docusaurus/Link";
-import styles from "./HomepageFeatures.module.css"
+import styles from "./ProjectsSection.module.css"
 import clsx from "clsx";
 
 type ExternalLink = {
@@ -149,9 +149,10 @@ function Feature({title, img, description, links}: FeatureItem) {
   )
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function ProjectsSection(): ReactNode {
   return (
     <div className={styles.features}>
+      <Heading as="h1">My Projects</Heading>
       <div className={styles.container}>
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />

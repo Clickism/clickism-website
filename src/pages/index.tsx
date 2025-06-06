@@ -1,16 +1,17 @@
-import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import ProjectsSection from "@site/src/components/ProjectsSection";
+import InfoSection from "@site/src/components/InfoSection";
+import SkillSection from "@site/src/components/SkillSection";
 
 export default function Home() {
   return (
     <Layout
-      title="Hello">
+      title="Clickism"
+      description="">
       <main>
-        <Heading as="h1" className="hero__title">
-          Hi! I'm Clickism
-        </Heading>
-        <HomepageFeatures />
+        <InfoSection/>
+        <SkillSection/>
+        <ProjectsSection/>
       </main>
     </Layout>
   )
