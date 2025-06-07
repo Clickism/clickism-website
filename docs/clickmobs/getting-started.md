@@ -2,6 +2,4 @@
 sidebar_position: 0
 ---
 # Getting Started
-ClickMobs
-
-**WARNING**: This is a work in progress. The documentation is not complete and may change significantly in the future.
+ClickMobs is a simple quality of life mod/plugin that allows you to pick up any mob into your inventory and carry them around.
