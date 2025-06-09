@@ -101,6 +101,19 @@ const FeatureList: FeatureItem[] = [
     ]
   },
   {
+    title: 'ClickAuth',
+    img: require('@site/static/img/projects/clickauth.webp').default,
+    description: (
+      <>
+        A simple offline authentication plugin that actually works.
+      </>
+    ),
+    links: [
+      {type: 'MODRINTH', href: 'https://modrinth.com/mod/clickauth'},
+      {type: 'GITHUB', href: 'https://github.com/Clickism/ClickAuth'},
+    ]
+  },
+  {
     title: 'Variant Brush',
     img: require('@site/static/img/projects/variantbrush.webp').default,
     description: (
