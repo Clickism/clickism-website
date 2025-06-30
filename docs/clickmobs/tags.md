@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Tags (Predicates)
 You can use tags to blacklist/whitelist mobs with certain properties.
