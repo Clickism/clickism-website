@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 ---
-# Tags (Predicates)
+# Tags
 You can use tags to blacklist/whitelist mobs with certain properties.
 Combining tags alongside negating them gives you a powerful filtering tool, to only
 blacklist/whitelist mobs you
@@ -60,9 +60,12 @@ You can find more details about which arguments they take in the next section.
 
 `?silent`: Will only select mobs that are silent.
 
-`?mob(type1, type2,...)` : Will only select mobs that are of one of the given types. Powerful when combined with other tags.
+`?mob(type1, type2, ...)` : Will only select mobs that are of one of the given types. Powerful when combined with other tags.
 
 `?leashed` : Will only select mobs that are leashed.
+
+`?customdata(entry1, entry2, ...)` : Will only select mobs that have the given custom data entries in their _persistent data container_.
+For more information: [Advanced Tags/?customdata](advanced-tags.md#customdata).
 
 ## Examples
 ```yaml
