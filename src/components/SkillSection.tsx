@@ -1,7 +1,17 @@
 import Heading from "@theme/Heading";
 import styles from "./SkillSection.module.css";
 import {DiCss3Full, DiHtml5, DiJava, DiReact} from "react-icons/di";
-import {SiC, SiGradle, SiJavascript, SiKotlin, SiRiscv, SiRust, SiSpringboot, SiTypescript} from "react-icons/si";
+import {
+  SiC,
+  SiGradle,
+  SiJavascript,
+  SiKotlin,
+  SiPython,
+  SiRiscv,
+  SiRust,
+  SiSpringboot,
+  SiTypescript
+} from "react-icons/si";
 import React, {ReactNode} from "react";
 import clsx from "clsx";
 import {TbSql} from "react-icons/tb";
@@ -35,6 +45,14 @@ const skills: Skill[] = [
     css: {
       color: "var(--skill-c)",
       borderColor: "var(--skill-c)",
+    }
+  },
+  {
+    name: "Python",
+    icon: <SiPython/>,
+    css: {
+      color: "var(--skill-python)",
+      borderColor: "var(--skill-python)",
     }
   },
   {

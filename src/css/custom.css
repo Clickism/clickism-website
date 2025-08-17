@@ -6,150 +6,152 @@
 
 /* You can override the default Infima variables here. */
 :root {
-    --ifm-color-primary: #4f90f4;
-    --ifm-color-primary-dark: #004dc1;
-    --ifm-color-primary-darker: #0049b6;
-    --ifm-color-primary-darkest: #003c96;
-    --ifm-color-primary-light: #005feb;
-    --ifm-color-primary-lighter: #0063f6;
-    --ifm-color-primary-lightest: #1774ff;
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-    --max-width: 1200px;
+  --ifm-color-primary: #4f90f4;
+  --ifm-color-primary-dark: #004dc1;
+  --ifm-color-primary-darker: #0049b6;
+  --ifm-color-primary-darkest: #003c96;
+  --ifm-color-primary-light: #005feb;
+  --ifm-color-primary-lighter: #0063f6;
+  --ifm-color-primary-lightest: #1774ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
 
-    --footer-color: rgba(214, 214, 214, 0.2);
-    --navbar-color: rgba(253, 253, 253, 0.8);
-    --background-color: rgb(255, 255, 255);
-    --solid-hover-color: rgb(50, 49, 49);
-    --hover-color: rgba(0, 0, 0, 0.1);
-    --border-color: rgb(70, 70, 70);
-    --text-color: rgb(9, 9, 9);
-    --footer-text-color: rgb(99, 99, 99);
-    --modrinth-color: rgb(22, 184, 67);
-    --maven-color: rgb(244, 141, 67);
-    --github-color: rgb(100, 89, 255);
+  --footer-color: rgba(214, 214, 214, 0.2);
+  --navbar-color: rgba(253, 253, 253, 0.8);
+  --background-color: rgb(255, 255, 255);
+  --solid-hover-color: rgb(50, 49, 49);
+  --hover-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgb(70, 70, 70);
+  --text-color: rgb(9, 9, 9);
+  --footer-text-color: rgb(99, 99, 99);
+  --modrinth-color: rgb(22, 184, 67);
+  --maven-color: rgb(244, 141, 67);
+  --github-color: rgb(100, 89, 255);
 
-    /* Skill colors */
-    --skill-java: rgb(230, 80, 0);
-    --skill-kotlin: rgb(110, 50, 200);
-    --skill-c: rgb(0, 102, 204);
-    --skill-rust: rgb(210, 90, 40);
-    --skill-springboot: rgb(40, 170, 40);
-    --skill-javascript: rgb(223, 160, 26);
-    --skill-typescript: rgb(0, 90, 160);
-    --skill-react: rgb(0, 180, 220);
-    --skill-sql: rgb(0, 102, 204);
-    --skill-riscv: rgb(200, 90, 20);
-    --skill-mips: rgb(230, 120, 0);
-    --skill-java-fx: rgb(191, 49, 121);
-    --skill-html: rgb(255, 100, 100);
-    --skill-css: rgb(100, 100, 255);
-    --skill-gradle: rgb(44, 100, 211);
+  /* Skill colors */
+  --skill-java: rgb(230, 80, 0);
+  --skill-kotlin: rgb(110, 50, 200);
+  --skill-c: rgb(0, 102, 204);
+  --skill-rust: rgb(210, 90, 40);
+  --skill-springboot: rgb(40, 170, 40);
+  --skill-javascript: rgb(223, 160, 26);
+  --skill-typescript: rgb(0, 90, 160);
+  --skill-react: rgb(0, 180, 220);
+  --skill-sql: rgb(0, 102, 204);
+  --skill-riscv: rgb(200, 90, 20);
+  --skill-mips: rgb(230, 120, 0);
+  --skill-java-fx: rgb(191, 49, 121);
+  --skill-html: rgb(255, 100, 100);
+  --skill-css: rgb(100, 100, 255);
+  --skill-gradle: rgb(44, 100, 211);
+  --skill-python: rgb(232, 177, 2);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-    --ifm-color-primary: #74a7fe;
-    --ifm-color-primary-dark: #4f90fe;
-    --ifm-color-primary-darker: #3d84fe;
-    --ifm-color-primary-darkest: #0661fd;
-    --ifm-color-primary-light: #99befe;
-    --ifm-color-primary-lighter: #abcafe;
-    --ifm-color-primary-lightest: #e2edff;
+  --ifm-color-primary: #74a7fe;
+  --ifm-color-primary-dark: #4f90fe;
+  --ifm-color-primary-darker: #3d84fe;
+  --ifm-color-primary-darkest: #0661fd;
+  --ifm-color-primary-light: #99befe;
+  --ifm-color-primary-lighter: #abcafe;
+  --ifm-color-primary-lightest: #e2edff;
 
-    --footer-color: rgba(0, 0, 0, 0.2);
-    --navbar-color: rgba(0, 0, 0, 0.8);
-    --background-color: rgb(20, 20, 20);
-    --hover-color: rgb(255, 255, 255, 0.1);
-    --border-color: rgb(70, 70, 70);
-    --text-color: rgb(227, 227, 227);
-    --footer-text-color: rgb(126, 126, 126);
-    --modrinth-color: rgb(99, 213, 131);
-    --maven-color: rgb(244, 156, 67);
-    --github-color: rgb(100, 89, 255);
+  --footer-color: rgba(0, 0, 0, 0.2);
+  --navbar-color: rgba(0, 0, 0, 0.8);
+  --background-color: rgb(20, 20, 20);
+  --hover-color: rgb(255, 255, 255, 0.1);
+  --border-color: rgb(70, 70, 70);
+  --text-color: rgb(227, 227, 227);
+  --footer-text-color: rgb(126, 126, 126);
+  --modrinth-color: rgb(99, 213, 131);
+  --maven-color: rgb(244, 156, 67);
+  --github-color: rgb(100, 89, 255);
 
-    /* Skill colors */
-    --skill-java: rgb(255, 160, 112);
-    --skill-kotlin: rgb(180, 120, 255);
-    --skill-c: rgb(100, 180, 255);
-    --skill-rust: rgb(255, 180, 120);
-    --skill-springboot: rgb(120, 255, 120);
-    --skill-javascript: rgb(255, 211, 100);
-    --skill-typescript: rgb(100, 180, 255);
-    --skill-react: rgb(150, 240, 255);
-    --skill-sql: rgb(100, 180, 255);
-    --skill-riscv: rgb(255, 180, 120);
-    --skill-mips: rgb(255, 200, 120);
-    --skill-java-fx: rgb(228, 67, 148);
-    --skill-html: rgb(255, 100, 100);
-    --skill-css: rgb(100, 100, 255);
-    --skill-gradle: rgb(72, 130, 241);
+  /* Skill colors */
+  --skill-java: rgb(255, 160, 112);
+  --skill-kotlin: rgb(180, 120, 255);
+  --skill-c: rgb(100, 180, 255);
+  --skill-rust: rgb(255, 180, 120);
+  --skill-springboot: rgb(120, 255, 120);
+  --skill-javascript: rgb(255, 211, 100);
+  --skill-typescript: rgb(100, 180, 255);
+  --skill-react: rgb(150, 240, 255);
+  --skill-sql: rgb(100, 180, 255);
+  --skill-riscv: rgb(255, 180, 120);
+  --skill-mips: rgb(255, 200, 120);
+  --skill-java-fx: rgb(228, 67, 148);
+  --skill-html: rgb(255, 100, 100);
+  --skill-css: rgb(100, 100, 255);
+  --skill-gradle: rgb(72, 130, 241);
+  --skill-python: rgb(243, 213, 92);
 }
 
 [data-theme='dark'] {
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 .footer {
-    padding: 1rem;
-    background-color: var(--footer-color);
+  padding: 1rem;
+  background-color: var(--footer-color);
 }
 
 .theme-layout-navbar {
-    background-color: var(--navbar-color);
-    backdrop-filter: blur(5px);
+  background-color: var(--navbar-color);
+  backdrop-filter: blur(5px);
 }
 
 .navbar-sidebar--show {
-    backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
 .theme-layout-main {
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 .cool-button {
-    background-color: transparent;
-    color: var(--ifm-color-primary-darker);
-    border: 1px solid var(--ifm-color-primary-darker);
-    width: fit-content;
-    padding: 0.5rem;
+  background-color: transparent;
+  color: var(--ifm-color-primary-darker);
+  border: 1px solid var(--ifm-color-primary-darker);
+  width: fit-content;
+  padding: 0.5rem;
 }
 
 .cool-button:hover {
-    background-color: var(--hover-color) !important;
-    color: var(--text-color) !important;
-    border-color: var(--text-color) !important;
+  background-color: var(--hover-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
 }
 
 .footer__copyright {
-    color: var(--footer-text-color) !important;
+  color: var(--footer-text-color) !important;
 }
 
 .main-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .dropdown__menu {
-    background-color: var(--background-color);
-    border-radius: 8px;
-    border: 1px solid var(--hover-color);
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border: 1px solid var(--hover-color);
 }
 
 .dropdown__link {
-    font-size: 16px;
-    transition: 0.2s;
+  font-size: 16px;
+  transition: 0.2s;
 }
 
 .theme-doc-markdown img {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .navbar-sidebar {
-    z-index: 1000;
-    position: fixed;
+  z-index: 1000;
+  position: fixed;
 }
 
 /*.navbar__item {*/
