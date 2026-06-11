@@ -2,5 +2,11 @@
   "title": "Configured",
   "description": "Documentation for Configured",
   "root": true,
-  "icon": "Cog"
+  "icon": "Cog",
+  "pages": [
+    "getting-started",
+    "adding-to-your-project",
+    "configuration",
+    "localization"
+  ]
 }

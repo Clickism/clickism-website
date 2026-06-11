@@ -2,5 +2,12 @@
   "title": "ClickMobs",
   "description": "Documentation for ClickMobs",
   "root": true,
-  "icon": "clickmobs"
+  "icon": "clickmobs",
+  "pages": [
+    "getting-started",
+    "configuration",
+    "blacklist-and-whitelist",
+    "tags",
+    "advanced-tags"
+  ]
 }
