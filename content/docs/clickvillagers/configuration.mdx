@@ -1,7 +1,11 @@
 ---
 title: Configuration
 ---
-ClickMobs uses the YAML format for configuration.
+
+import {Step, Steps} from "fumadocs-ui/components/steps";
+import {Callout} from "fumadocs-ui/components/callout";
+
+ClickVillagers uses the YAML format for configuration.
 If you don't know what YAML is, please look into some tutorials or quick guides online:
 
 - https://docs.ansible.com/projects/ansible/latest/reference_appendices/YAMLSyntax.html
@@ -13,7 +17,7 @@ If you don't know what YAML is, please look into some tutorials or quick guides 
 The easiest way to find out where your configuration file is to run the command:
 
 ```console title="Minecraft Command"
-/clickmobs config path
+/clickvillagers config path
 ```
 
 This will output the absolute path to the configuration file in the chat,
@@ -26,7 +30,7 @@ You can find the `config.yml` file used for configuring the mod/plugin at:
 <Steps>
   <Step>
     ### Fabric
-    If you are using the mod on a **client**: `.minecraft/config/ClickMobs/config.yml`
+    If you are using the mod on a **client**: `.minecraft/config/ClickVillagers/config.yml`
 
     <Callout type="warning">
       If you are using a custom client, i.E. Lunar or Modrinth, go to the corresponding installation directory instead of `.minecraft`.
@@ -36,6 +40,6 @@ You can find the `config.yml` file used for configuring the mod/plugin at:
   </Step>
   <Step>
     ### Paper / Spigot
-    - Found at `.../plugins/ClickMobs/config.yml`
+    - Found at `.../plugins/ClickVillagers/config.yml`
   </Step>
 </Steps>

@@ -2,5 +2,8 @@
   "title": "ClickVillagers",
   "description": "Documentation for ClickVillagers",
   "root": true,
-  "icon": "clickvillagers"
+  "icon": "clickvillagers",
+  "pages": [
+    "configuration"
+  ]
 }

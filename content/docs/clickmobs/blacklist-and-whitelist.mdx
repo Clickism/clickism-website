@@ -1,6 +1,9 @@
 ---
 title: Blacklist and Whitelist
 ---
+
+import {Callout} from "fumadocs-ui/components/callout";
+
 ClickMobs uses a blacklist and a whitelist that allow you to customize which mobs you can pick up and which you cannot.
 
 You can edit the blacklist/whitelist in the `config.yml` file for ClickMobs.
@@ -29,6 +32,14 @@ blacklisted_mobs:
 
 *The `?hostile` is a tag, and targets all hostile mobs.
 We will look into tags in closer detail in the [Tags](tags.md) section.*
+
+<Callout type="warning">
+  For empty lists, you need to use `[]` instead of leaving it empty:
+
+  ```yaml
+  blacklisted_mobs: []
+  ```
+</Callout>
 
 If you want to disable picking up a specific mob, you can add it to the blacklist
 using its full entity name:
