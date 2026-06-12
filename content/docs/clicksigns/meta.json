@@ -4,7 +4,7 @@
   "root": true,
   "icon": "clicksigns",
   "pages": [
-    "getting-started",
+    "index",
     "usage",
     "templates"
   ]

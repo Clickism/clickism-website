@@ -4,7 +4,7 @@
   "root": true,
   "icon": "Cog",
   "pages": [
-    "getting-started",
+    "index",
     "adding-to-your-project",
     "configuration",
     "localization"

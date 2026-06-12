@@ -4,7 +4,7 @@
   "root": true,
   "icon": "clickmobs",
   "pages": [
-    "getting-started",
+    "index",
     "configuration",
     "blacklist-and-whitelist",
     "tags",
