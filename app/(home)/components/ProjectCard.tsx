@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'fumadocs-core/link';
-import {BookOpen, ExternalLink} from 'lucide-react';
+import {ArrowDownToLine, ArrowDownToLineIcon, BookOpen, Download, ExternalLink} from 'lucide-react';
 import {SiGithub, SiModrinth} from '@icons-pack/react-simple-icons';
 import {buttonVariants} from 'fumadocs-ui/components/ui/button';
 import Tilt from 'react-parallax-tilt';
@@ -38,7 +38,7 @@ function ProjectLinkButton({link}: { link: ProjectLink }) {
   );
 }
 
-export default function ProjectCard({project}: { project: Project }) {
+export default function ProjectCard({project, downloads}: { project: Project; downloads?: number; }) {
   return (
     <Tilt
       tiltMaxAngleX={6}
@@ -60,6 +60,12 @@ export default function ProjectCard({project}: { project: Project }) {
             <h2 className="font-semibold">
               {project.name}
             </h2>
+            {downloads !== undefined && (
+              <span className="ml-auto text-sm text-fd-muted-foreground flex items-center gap-1">
+                <ArrowDownToLine size="14" />
+                {downloads.toLocaleString()}
+              </span>
+            )}
           </div>
 
           <p className="mt-2 text-sm text-fd-muted-foreground">

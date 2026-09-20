@@ -1,6 +1,6 @@
 import Hero from "@/app/(home)/components/Hero";
 import ProjectGrid from "@/app/(home)/components/ProjectGrid";
-import {projects} from "@/app/(home)/project";
+import {projects} from "@/app/(home)/projects";
 
 export default function HomePage() {
   return (
