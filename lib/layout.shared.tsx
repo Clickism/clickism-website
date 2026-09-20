@@ -1,6 +1,7 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { appName, gitConfig } from './shared';
-import { customIcons } from './icons';
+import type {BaseLayoutProps} from 'fumadocs-ui/layouts/shared';
+import {appName, gitConfig} from './shared';
+import {customIcons} from './icons';
+import {SiDiscord} from "@icons-pack/react-simple-icons";
 
 export function baseOptions(): BaseLayoutProps {
   return {
@@ -20,7 +21,7 @@ export function baseOptions(): BaseLayoutProps {
       },
       {
         type: 'icon',
-        icon: customIcons.discord,
+        icon: <SiDiscord/>,
         external: true,
         url: 'https://discord.gg/zUetzp3Gzk',
         text: 'Discord',

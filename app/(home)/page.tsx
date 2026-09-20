@@ -1,21 +1,21 @@
-import Link from 'next/link';
+import Hero from "@/app/(home)/components/Hero";
+import ProjectGrid from "@/app/(home)/components/ProjectGrid";
+import {projects} from "@/app/(home)/project";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center text-center flex-1">
-      <h1 className="text-2xl font-bold mb-4">Clickism</h1>
-      <p>
-        The home page is work in progress!
-      </p>
-      <p>
-        But in the mean time you can check out the
-        {" "}
-        <Link href="/docs" className="text-fd-primary underline">
-          documentation
-        </Link>
-        {" "}
-        for my projects!
-      </p>
+    <div className="flex flex-col justify-center flex-1 p-4">
+      <main className="flex flex-col w-full max-w-6xl flex-1 mx-auto">
+        <Hero/>
+
+        <div className="border-t border-white/10 my-4"/>
+
+        <h1 className="text-2xl font-bold mb-4">Projects</h1>
+
+        <ProjectGrid projects={projects}/>
+
+        <div className="border-t border-white/10 my-4"/>
+      </main>
     </div>
   );
 }
