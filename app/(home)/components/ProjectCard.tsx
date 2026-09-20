@@ -6,7 +6,7 @@ import {SiGithub, SiModrinth} from '@icons-pack/react-simple-icons';
 import {buttonVariants} from 'fumadocs-ui/components/ui/button';
 import Tilt from 'react-parallax-tilt';
 
-import {Project, ProjectLink} from '@/app/(home)/project';
+import {DownloadCount, Project, ProjectLink} from '@/app/(home)/project';
 
 function ProjectLinkButton({link}: { link: ProjectLink }) {
   const icons = {
@@ -38,7 +38,7 @@ function ProjectLinkButton({link}: { link: ProjectLink }) {
   );
 }
 
-export default function ProjectCard({project, downloads}: { project: Project; downloads?: number; }) {
+export default function ProjectCard({project, downloads}: { project: Project; downloads?: DownloadCount; }) {
   return (
     <Tilt
       tiltMaxAngleX={6}
@@ -63,7 +63,7 @@ export default function ProjectCard({project, downloads}: { project: Project; do
             {downloads !== undefined && (
               <span className="ml-auto text-sm text-fd-muted-foreground flex items-center gap-1">
                 <ArrowDownToLine size="14" />
-                {downloads.toLocaleString()}
+                {downloads.total.toLocaleString()}
               </span>
             )}
           </div>

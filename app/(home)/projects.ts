@@ -4,7 +4,8 @@ export const projects: Project[] = [
   {
     name: 'ClickVillagers',
     image: '/icons/clickvillagers.webp',
-    modrinth: 'clickvillagers',
+    modrinthSlug: 'clickvillagers',
+    curseforgeId: 1162587,
     description:
       'A simple Fabric mod/Spigot plugin that makes handling villagers a lot easier.',
     links: [
@@ -21,7 +22,8 @@ export const projects: Project[] = [
   {
     name: 'ClickMobs',
     image: '/icons/clickmobs.webp',
-    modrinth: 'clickmobs',
+    modrinthSlug: 'clickmobs',
+    curseforgeId: 1179556,
     description:
       'A simple Fabric mod/Spigot plugin that allows you to pick up any mob into your inventory.',
     links: [
@@ -36,6 +38,28 @@ export const projects: Project[] = [
       {
         type: 'DOCS',
         href: '/docs/clickmobs',
+      },
+    ],
+  },
+  {
+    name: 'ClickSigns',
+    image: '/icons/clicksigns.webp',
+    modrinthSlug: 'clicksigns',
+    curseforgeId: 1161795,
+    description:
+      'An innovative Fabric mod that lets you create custom highway and street signs.',
+    links: [
+      {
+        type: 'MODRINTH',
+        href: 'https://modrinth.com/mod/clicksigns',
+      },
+      {
+        type: 'GITHUB',
+        href: 'https://github.com/Clickism/ClickSigns',
+      },
+      {
+        type: 'DOCS',
+        href: '/docs/clicksigns',
       },
     ],
   },
@@ -62,7 +86,7 @@ export const projects: Project[] = [
   {
     name: 'ClickShop',
     image: '/icons/clickshop.webp',
-    modrinth: 'clickshop',
+    modrinthSlug: 'clickshop',
     description:
       'An innovative, highly customizable Spigot shop plugin.',
     links: [
@@ -73,27 +97,6 @@ export const projects: Project[] = [
       {
         type: 'GITHUB',
         href: 'https://github.com/Clickism/ClickShop',
-      },
-    ],
-  },
-  {
-    name: 'ClickSigns',
-    image: '/icons/clicksigns.webp',
-    modrinth: 'clicksigns',
-    description:
-      'An innovative Fabric mod that lets you create custom highway and street signs.',
-    links: [
-      {
-        type: 'MODRINTH',
-        href: 'https://modrinth.com/mod/clicksigns',
-      },
-      {
-        type: 'GITHUB',
-        href: 'https://github.com/Clickism/ClickSigns',
-      },
-      {
-        type: 'DOCS',
-        href: '/docs/clicksigns',
       },
     ],
   },
@@ -116,7 +119,7 @@ export const projects: Project[] = [
   {
     name: 'ClickAuth',
     image: '/icons/clickauth.webp',
-    modrinth: 'clickauth',
+    modrinthSlug: 'clickauth',
     description:
       'A simple offline authentication plugin that actually works.',
     links: [
@@ -133,7 +136,7 @@ export const projects: Project[] = [
   {
     name: 'Variant Brush',
     image: '/icons/variantbrush.webp',
-    modrinth: 'variant-brush',
+    modrinthSlug: 'variant-brush',
     description:
       'A simple Fabric mod/Spigot plugin for changing farm animal variants with a brush.',
     links: [
