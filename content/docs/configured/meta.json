@@ -3,10 +3,5 @@
   "description": "Documentation for Configured",
   "root": true,
   "icon": "Cog",
-  "pages": [
-    "index",
-    "adding-to-your-project",
-    "configuration",
-    "localization"
-  ]
+  "pages": ["index", "adding-to-your-project", "configuration", "localization"]
 }

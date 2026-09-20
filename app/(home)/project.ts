@@ -1,14 +1,17 @@
-import {unstable_cache} from "next/cache";
+import { unstable_cache } from "next/cache";
+import {ReactNode} from "react";
 
-export type ProjectLinkType = 'MODRINTH' | 'GITHUB' | 'DOCS' | 'MAVEN';
+export type ProjectLinkType = "MODRINTH" | "GITHUB" | "DOCS" | "MAVEN" | "EXTERNAL";
 
 export interface ProjectLink {
+  label?: string | ReactNode;
   type: ProjectLinkType;
   href: string;
 }
 
 export interface Project {
   name: string;
+  label?: string | ReactNode;
   image?: string;
   description: string;
   links: ProjectLink[];
@@ -20,7 +23,7 @@ type ModrinthProject = {
   id: string;
   slug: string | null;
   downloads: number;
-}
+};
 
 /**
  * Fetches the download counts for the given Modrinth projects.
@@ -45,7 +48,7 @@ async function getModrinthDownloads(projects: Project[]) {
   if (!response.ok) {
     return new Map<string, number>();
   }
-  const data = await response.json() as ModrinthProject[];
+  const data = (await response.json()) as ModrinthProject[];
   return new Map(
     data
       .filter((project) => project.slug !== null)
@@ -56,7 +59,7 @@ async function getModrinthDownloads(projects: Project[]) {
 type CurseforgeProject = {
   id: number;
   downloadCount: number;
-}
+};
 
 /**
  * Fetches the download counts for the given Curseforge projects.
@@ -71,33 +74,27 @@ async function getCurseforgeDownloads(projects: Project[]) {
     return new Map<number, number>();
   }
   const apiKey = process.env.CURSEFORGE_API_KEY!;
-  const response = await fetch(
-    'https://api.curseforge.com/v1/mods',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-      },
-      body: JSON.stringify({
-        modIds: ids,
-      }),
-      next: {
-        revalidate: 300,
-      },
+  const response = await fetch("https://api.curseforge.com/v1/mods", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
     },
-  );
+    body: JSON.stringify({
+      modIds: ids,
+    }),
+    next: {
+      revalidate: 300,
+    },
+  });
   if (!response.ok) {
     return new Map<number, number>();
   }
-  const data = await response.json() as {
+  const data = (await response.json()) as {
     data: CurseforgeProject[];
   };
   return new Map(
-    data.data.map((project) => [
-      project.id,
-      project.downloadCount,
-    ]),
+    data.data.map((project) => [project.id, project.downloadCount]),
   );
 }
 
@@ -105,7 +102,7 @@ export type DownloadCount = {
   modrinth: number;
   curseforge: number;
   total: number;
-}
+};
 
 /**
  * Fetches the total download counts for the given projects from both Modrinth and Curseforge.
@@ -113,9 +110,7 @@ export type DownloadCount = {
  * @returns A record from project names to their download counts.
  */
 export const getTotalDownloads = unstable_cache(
-  async (
-    projects: Project[],
-  ): Promise<Record<string, DownloadCount>> => {
+  async (projects: Project[]): Promise<Record<string, DownloadCount>> => {
     const [modrinth, curseforge] = await Promise.all([
       getModrinthDownloads(projects),
       getCurseforgeDownloads(projects),
@@ -123,8 +118,12 @@ export const getTotalDownloads = unstable_cache(
 
     const totalDownloads: Record<string, DownloadCount> = {};
     for (const project of projects) {
-      const modrinthDownloads = project.modrinthSlug ? modrinth.get(project.modrinthSlug) || 0 : 0;
-      const curseforgeDownloads = project.curseforgeId ? curseforge.get(project.curseforgeId) || 0 : 0;
+      const modrinthDownloads = project.modrinthSlug
+        ? modrinth.get(project.modrinthSlug) || 0
+        : 0;
+      const curseforgeDownloads = project.curseforgeId
+        ? curseforge.get(project.curseforgeId) || 0
+        : 0;
 
       totalDownloads[project.name] = {
         modrinth: modrinthDownloads,
@@ -134,8 +133,44 @@ export const getTotalDownloads = unstable_cache(
     }
     return totalDownloads;
   },
-  ['total-project-downloads'],
+  ["total-project-downloads"],
   {
-    revalidate: 60 * 60 * 6 // 6 hours
-  }
+    revalidate: 60 * 60 * 6, // 6 hours
+  },
 );
+
+export function github(link: string): ProjectLink {
+  return {
+    type: "GITHUB",
+    href: link,
+  };
+}
+
+export function modrinth(link: string): ProjectLink {
+  return {
+    type: "MODRINTH",
+    href: link,
+  };
+}
+
+export function docs(link: string): ProjectLink {
+  return {
+    type: "DOCS",
+    href: link,
+  };
+}
+
+export function maven(link: string): ProjectLink {
+  return {
+    type: "MAVEN",
+    href: link,
+  };
+}
+
+export function external(link: string, label: ProjectLink["label"]): ProjectLink {
+  return {
+    type: "EXTERNAL",
+    href: link,
+    label,
+  };
+}

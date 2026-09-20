@@ -3,9 +3,5 @@
   "description": "Documentation for ClickSigns",
   "root": true,
   "icon": "clicksigns",
-  "pages": [
-    "index",
-    "usage",
-    "templates"
-  ]
+  "pages": ["index", "usage", "templates"]
 }

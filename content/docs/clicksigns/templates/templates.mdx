@@ -1,6 +1,7 @@
 ---
 title: Template Guide
 ---
+
 > This is a work in progress guide, some information could be incomplete or slighly wrong, we ask that you
 > tell us if there is anything wrong or missing.
 
@@ -73,8 +74,8 @@ Template files are `json` files that tells ClickSigns:
 - Who made it (useful on collaborative packs)
 - Where to get their textures (in theory, you could use other resource packs)
 - If the sign can be [text written over it ](#writable)
-    - Where it can be written
-    - How the text looks
+  - Where it can be written
+  - How the text looks
 - If the sign has [variants](#variants) (IE: direction arrows, colors, or different designs)
 
 Below there is an example of a basic sign `1x1_simple.json`:
@@ -104,7 +105,7 @@ Below there is an example of a basic sign `1x1_simple.json`:
 This sign displays a simple texture when placed, with no text or complex behavior
 
 > Note that the textures are expected to be located in the resource pack described on `pack.id` on the path
-`my-resource-pack/textures`. Failing to follow this could cause your textures to not load.
+> `my-resource-pack/textures`. Failing to follow this could cause your textures to not load.
 
 ### Templates
 
@@ -147,7 +148,7 @@ text, this is a `token`, which is a value that can be replaced by ClickSigns whe
 ##### Built-in tokens
 
 | Name        | Description                                                                                                                                         |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `direction` | Only available when defining the direction list on `templateGenerator.directions`, the text is replaced with the value in `direction`: (IE: `left`) |
 
 ###### Custom tokens
