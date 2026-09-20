@@ -1,12 +1,13 @@
 "use client";
 import Image from 'next/image';
 import Link from 'fumadocs-core/link';
-import {ArrowDownToLine, ArrowDownToLineIcon, BookOpen, Download, ExternalLink} from 'lucide-react';
-import {SiGithub, SiModrinth} from '@icons-pack/react-simple-icons';
+import {ArrowDownToLine, BookOpen, ExternalLink} from 'lucide-react';
+import {SiCurseforge, SiGithub, SiModrinth} from '@icons-pack/react-simple-icons';
 import {buttonVariants} from 'fumadocs-ui/components/ui/button';
 import Tilt from 'react-parallax-tilt';
 
 import {DownloadCount, Project, ProjectLink} from '@/app/(home)/project';
+import {Tooltip} from "@base-ui/react/tooltip";
 
 function ProjectLinkButton({link}: { link: ProjectLink }) {
   const icons = {
@@ -38,6 +39,35 @@ function ProjectLinkButton({link}: { link: ProjectLink }) {
   );
 }
 
+function DownloadBadge({downloads}: { downloads: DownloadCount }) {
+  return (
+    <Tooltip.Root>
+      <Tooltip.Trigger
+        render={
+          <span
+            className="ml-auto text-sm text-fd-muted-foreground flex items-center gap-1 hover:text-fd-foreground transition-colors">
+            <ArrowDownToLine size="14"/>
+            {downloads.total.toLocaleString()}
+          </span>
+        }
+      />
+      <Tooltip.Portal>
+        <Tooltip.Positioner side="top" sideOffset={6}>
+          <Tooltip.Popup
+            className="flex flex-col gap-2 rounded-md border bg-fd-popover px-3 py-2 text-xs text-fd-popover-foreground shadow-lg">
+            <div className="flex items-center gap-2 text-fd-muted-foreground">
+              <SiModrinth size={14}/> {downloads.modrinth.toLocaleString()}
+            </div>
+            <div className="flex items-center gap-2 text-fd-muted-foreground">
+              <SiCurseforge size={14}/> {downloads.curseforge.toLocaleString()}
+            </div>
+          </Tooltip.Popup>
+        </Tooltip.Positioner>
+      </Tooltip.Portal>
+    </Tooltip.Root>
+  )
+}
+
 export default function ProjectCard({project, downloads}: { project: Project; downloads?: DownloadCount; }) {
   return (
     <Tilt
@@ -61,10 +91,7 @@ export default function ProjectCard({project, downloads}: { project: Project; do
               {project.name}
             </h2>
             {downloads !== undefined && (
-              <span className="ml-auto text-sm text-fd-muted-foreground flex items-center gap-1">
-                <ArrowDownToLine size="14" />
-                {downloads.total.toLocaleString()}
-              </span>
+              <DownloadBadge downloads={downloads}/>
             )}
           </div>
 
