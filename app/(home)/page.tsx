@@ -1,20 +1,36 @@
 import Hero from "@/app/(home)/components/Hero";
 import ProjectGrid from "@/app/(home)/components/ProjectGrid";
-import { projects } from "@/app/(home)/projects";
+import {projects} from "@/app/(home)/projects";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col justify-center flex-1 p-4">
       <main className="flex flex-col w-full max-w-6xl flex-1 mx-auto">
-        <Hero />
+        <Hero/>
 
-        <div className="border-t border-white/10 my-4" />
+        <div className="border-t border-white/10 my-4"/>
 
-        <h1 className="text-2xl font-bold mb-4">Projects</h1>
+        <div className="prose">
+          <h2 className="mb-2">Projects</h2>
+          <p>
+            Here are some of my projects that I have worked on. You can find more on my
+            {" "}
+            <a
+              href="https://github.com/Clickism"
+              no-referrer
+              target="_blank"
+            >
+              GitHub
+            </a>
+            .
+          </p>
+          <p/>
+        </div>
 
-        <ProjectGrid projects={projects} />
 
-        <div className="border-t border-white/10 my-4" />
+        <ProjectGrid projects={projects}/>
+
+        <div className="border-t border-white/10 my-4"/>
       </main>
     </div>
   );

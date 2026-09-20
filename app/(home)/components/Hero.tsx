@@ -5,7 +5,7 @@ export default function Hero() {
     <div className="relative flex flex-col items-center justify-center min-h-100 bg-[url(/hero-bg.png)] bg-no-repeat bg-cover bg-bottom rounded-2xl border border-white/20">
       <h1 className="text-6xl font-bold text-shadow-md">Clickism</h1>
       <p className="mt-4 max-w-lg text-lg text-white/90 text-shadow-md text-center">
-        Software engineer and Minecraft mod developer creating open-source
+        Computer Science student and software developer creating open-source
         tools, mods, and libraries.
       </p>
 

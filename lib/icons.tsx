@@ -8,7 +8,8 @@ export const customIcons = {
   clickvillagers: icon("clickvillagers.webp"),
   clickmobs: icon("clickmobs.webp"),
   clicksigns: icon("clicksigns.webp"),
-  clickui: icon("clickuisign.png")
+  clickui: icon("clickuisign.png"),
+  configured: icon("configured.webp"),
 };
 
 /**
