@@ -1,8 +1,10 @@
+"use client";
 import Image from 'next/image';
 import Link from 'fumadocs-core/link';
 import {BookOpen, ExternalLink} from 'lucide-react';
 import {SiGithub, SiModrinth} from '@icons-pack/react-simple-icons';
 import {buttonVariants} from 'fumadocs-ui/components/ui/button';
+import Tilt from 'react-parallax-tilt';
 
 import {Project, ProjectLink} from '@/app/(home)/project';
 
@@ -38,39 +40,44 @@ function ProjectLinkButton({link}: { link: ProjectLink }) {
 
 export default function ProjectCard({project}: { project: Project }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-xl border bg-fd-card">
-      <div className="flex h-full flex-col p-5">
-        <div className="flex items-center gap-3">
-          {project.image && (
-            <div className="relative w-8 h-8 overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.name}
-                fill
-                className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+    <Tilt
+      tiltMaxAngleX={6}
+      tiltMaxAngleY={6}
+      perspective={1000}
+      scale={1.02}
+      transitionSpeed={1500}
+      glareEnable
+      glareMaxOpacity={0.1}
+      glareColor="white"
+      glareBorderRadius="var(--radius-xl)"
+    >
+      <div className="flex h-full flex-col overflow-hidden rounded-xl border bg-fd-card">
+        <div className="flex h-full flex-col p-5">
+          <div className="flex items-center gap-3">
+            {project.image && (
+              <Image src={project.image} alt={project.name} width={32} height={32}/>
+            )}
+            <h2 className="font-semibold">
+              {project.name}
+            </h2>
+          </div>
+
+          <p className="mt-2 text-sm text-fd-muted-foreground">
+            {project.description}
+          </p>
+
+          <div className="mt-auto"/>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.links.map((link) => (
+              <ProjectLinkButton
+                key={`${link.type}-${link.href}`}
+                link={link}
               />
-            </div>
-          )}
-          <h2 className="font-semibold">
-            {project.name}
-          </h2>
-        </div>
-
-        <p className="mt-2 text-sm text-fd-muted-foreground">
-          {project.description}
-        </p>
-
-        <div className="mt-auto"/>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.links.map((link) => (
-            <ProjectLinkButton
-              key={`${link.type}-${link.href}`}
-              link={link}
-            />
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Tilt>
   );
 }
