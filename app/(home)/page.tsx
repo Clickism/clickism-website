@@ -17,8 +17,8 @@ export default function HomePage() {
             {" "}
             <a
               href="https://github.com/Clickism"
-              no-referrer
               target="_blank"
+              rel="noopener noreferrer"
             >
               GitHub
             </a>

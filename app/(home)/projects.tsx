@@ -12,6 +12,7 @@ export const projects: Project[] = [
     links: [
       modrinth("https://modrinth.com/plugin/clickvillagers"),
       github("https://github.com/Clickism/ClickVillagers"),
+      docs("/docs/clickvillagers")
     ],
   },
   {
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     links: [
       modrinth("https://modrinth.com/plugin/clickmobs"),
       github("https://github.com/Clickism/ClickMobs"),
+      docs("/docs/clickmobs"),
     ],
   },
   {
