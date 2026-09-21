@@ -48,3 +48,10 @@ html > body[data-scroll-locked] {
   --color-fd-accent-foreground: hsl(0, 0%, 90%);
   --color-fd-ring: hsl(0, 0%, 54.9%);
 }
+
+[data-rmiz-modal-img] {
+  border-radius: var(--radius-2xl);
+  border-color: color-mix(in oklab, var(--color-white) 20%, transparent 80%);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
