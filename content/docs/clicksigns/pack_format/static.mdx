@@ -6,45 +6,50 @@ Static textures are located in the `signs/static` folder of your pack.
 
 To add a static texture, simply put your texture file in the `signs/static` folder.
 
-By default, your texture will not have a category (and show up as "Uncategorized").
-It will also not have any color replacements or other texture processors.
-To add texture processors, you need to attach a **static texture definition** to your texture.
+By default, your texture will not have a category (and show up under "Uncategorized").
+It will also not have any defined colors. To define colors for the texture,
+you need to attach a **static texture definition** to your texture.
+
+> Make sure to check out the [Colors](../colors) page if you haven't already.
 
 ### Static Texture Definition
 
 To add a static texture definition, create a json file with the
 same name as your texture file, but replace `.png` with `.static.json`.
 
-import {File, Folder, Files} from "../../../../components/mdx";
-
 <Files>
     <Folder name="static" defaultOpen>
-        <File name="my_texture.png" />
-        <File name="my_texture.static.json" />
+        <File name="my_texture.png"/>
+        <File name="my_texture.static.json"/>
     </Folder>
 </Files>
 
-A static texture definition can contain a `ColorDefinition`:
+A static texture definition can define custom colors:
 
 ```json title=".static.json"
 {
   "colors": {
     "foreground": "white",
-    "custom_color": "#4287f5",
+    "custom_color": "#4287f5"
     // ...
   }
 }
 ```
 
+> If you don't use a `.static.json` file, ClickSigns will try to decide a good foreground color
+based on the contrast level with the primary color of the texture.
+
 ## Adding a Category
 
 To create a new category, all you need is a folder and a `_category.json` file inside
-that folder. All static textures in that folder will then belong to that category.
+that folder. All static textures in that folder (but not its subdirectories) will then belong to that category.
 
 <Files>
-    <Folder name="my_category" defaultOpen>
-        <File name="_category.json" />
-        <File name="my_texture.png" />
+    <Folder name="static" defaultOpen>
+        <Folder name="my_category" defaultOpen>
+            <File name="_category.json"/>
+            <File name="my_texture.png"/>
+        </Folder>
     </Folder>
 </Files>
 
@@ -59,15 +64,45 @@ And then give a name to your category in the `_category.json` file:
 You can also define a default texture definition inside of `_category.json`, so that
 you don't need to create a `.static.json` file for every texture in that category.
 
-> However, a texture definition in a `.static.json` file will always override the default definition in the category.
-
 ```json title="_category.json"
 {
   "name": "My Category",
-  "default": { // [!code ++]
-    "colors": { // [!code ++]
-      "foreground": "white" // [!code ++]
-    } // [!code ++]
-  } // [!code ++]
+  "default": { // [!code ++:5]
+    "colors": {
+      "foreground": "white"
+    }
+  }
 }
 ```
+
+> However, a texture definition in a `.static.json` file will always override the default definition in the category.
+
+### References
+
+#### Static Texture Definition (`.static.json`)
+
+<TypeTable
+    type={{
+        colors: {
+            type: "Map<String, String>",
+            description: "A map of color names to color values."
+        }
+    }}
+/>
+
+#### Category Definition (`_category.json`)
+
+<TypeTable
+    type={{
+        name: {
+            type: "String",
+            required: true,
+            description: "The name of the category."
+        },
+        default: {
+            type: "Static Texture Definition",
+            typeDescriptionLink: "#static-texture-definition",
+            description: "A default static texture definition for all static textures in this category."
+        }
+    }}
+/>

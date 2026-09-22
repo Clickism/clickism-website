@@ -9,11 +9,16 @@ import {
   Folder as FumaFolder,
 } from "fumadocs-ui/components/files";
 import { Braces } from "lucide-react";
+import { TypeTable } from "fumadocs-ui/components/type-table";
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
     ...defaultMdxComponents,
     ...components,
+    Files,
+    Folder,
+    File,
+    TypeTable,
     img: (props) => (
       <ImageZoom
         {...(props as any)}

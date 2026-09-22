@@ -2,4 +2,220 @@
 title: Adding Symbols
 ---
 
+Symbols are located in the `signs/symbols` folder of your pack.
 
+To add a symbol, simply put your texture file in the `signs/symbols` folder.
+
+By default, your symbol will not have a category (and show up under "Uncategorized").
+It will also not adapt to the background color of the road sign for that,
+we need to add a **symbol definition** to your symbol.
+
+### Symbol Definition
+
+If you haven't already, it is recommended to check out the
+[Texture Pipeline](../textures#texture-pipeline) page, as it explains how the texture pipeline works in ClickSigns.
+And also the [Colors](../colors) page, as it explains how colors work for your textures.
+
+To add a symbol definition, create a json file with the
+same name as your symbol file, but replace `.png` with `.symbol.json`.
+
+import {File, Files, Folder} from "../../../../components/mdx";
+
+<Files>
+    <Folder name="symbols" defaultOpen>
+        <File name="my_symbol.png"/>
+        <File name="my_symbol.symbol.json"/>
+    </Folder>
+</Files>
+
+A static texture definition can define a **texture pipeline** for that symbol.
+Since the base image of the texture is the symbol itself, we only need to define
+the **texture processors** that will be applied to the symbol.
+
+```json title=".symbol.json"
+
+{
+  "texture": {
+    "processors": [
+      // [!code highlight:4]
+      {
+        "type": "replaceColor",
+        "to": "foreground"
+      }
+    ]
+  }
+}
+```
+
+## Adding a Category
+
+To create a new category, all you need is a folder and a `_category.json` file inside
+that folder. All symbols in that folder (but not its subdirectories) will then belong to that category.
+
+<Files>
+    <Folder name="symbols" defaultOpen>
+        <Folder name="my_category" defaultOpen>
+            <File name="_category.json"/>
+            <File name="my_symbol.png"/>
+        </Folder>
+    </Folder>
+</Files>
+
+And then give a name to your category in the `_category.json` file:
+
+```json title="_category.json"
+{
+  "name": "My Category"
+}
+```
+
+You can also define a default symbol definition inside of `_category.json`, so that
+you don't need to create a `.symbol.json` file for every symbol in that category.
+
+```json title="_category.json"
+{
+  "name": "My Category",
+  "default": { // [!code ++:10]
+    "texture": {
+      "processors": [
+        {
+          "type": "replaceColor",
+          "to": "foreground"
+        }
+      ]
+    }
+  }
+}
+```
+
+> However, a symbol definition in a `.symbol.json` file will always override the default definition in the category.
+
+<Callout type="idea">
+    For arrows, or other monochrome symbols, you can put them in a category,
+    and define a default symbol definition in the `_category.json` file with
+    a `replaceColor` processor that replaces the color of the symbol with the foreground color of the road sign.
+    This will then apply to all symbols in that category, and you won't need to create a `.symbol.json` file for every symbol.
+
+    This is how the default symbols in ClickSigns are defined.
+</Callout>
+
+### References
+
+#### Symbol Definition (`.symbol.json`)
+
+<TypeTable
+    type={{
+        texture: {
+            type: "Texture Pipeline",
+            typeDescriptionLink: "#texture-pipeline",
+            description: "A map of color names to color values."
+        }
+    }}
+/>
+
+#### Category Definition (`_category.json`)
+
+<TypeTable
+    type={{
+        name: {
+            type: "String",
+            required: true,
+            description: "The name of the category."
+        },
+        default: {
+            type: "Symbol Definition",
+            typeDescriptionLink: "#symbol-definition",
+            description: "A default symbol definition for all symbols in this category."
+        }
+    }}
+/>
+
+#### Texture Pipeline
+
+<TypeTable
+    type={{
+        processors: {
+            type: <>List&lt;Texture Processor&gt;</>,
+            typeDescriptionLink: "#texture-processor",
+            description: "A list of texture processors to apply to the texture.",
+            required: true
+        }
+    }}
+/>
+
+#### Texture Processors
+<TypeTable
+    type={{
+        type: {
+            type: <code>"replaceColor"</code>,
+            description: "Replaces a color in the texture with another color.",
+            required: true,
+        },
+        from: {
+            type: "String",
+            description: "The color to replace. Or empty to replace all colors."
+        },
+        to: {
+            type: "String",
+            required: true,
+            description: "The color to replace the from color with."
+        }
+    }}
+/>
+
+<TypeTable
+    type={{
+        type: {
+            type: <code>"flip"</code>,
+            description: "Flips the texture horizontally or vertically.",
+            required: true,
+        },
+        flipX: {
+            type: "Boolean",
+            description: "Whether to flip the texture horizontally."
+        },
+        flipY: {
+            type: "Boolean",
+            description: "Whether to flip the texture vertically."
+        }
+    }}
+/>
+
+<TypeTable
+    type={{
+        type: {
+            type: <code>"rotate"</code>,
+            description: "Rotates the texture by a certain number of degrees.",
+            required: true,
+        },
+        degrees: {
+            type: "Number",
+            description: "The number of degrees to rotate the texture.",
+            required: true
+        }
+    }}
+/>
+
+<TypeTable
+    type={{
+        type: {
+            type: <code>"tiler"</code>,
+            required: true,
+        },
+        cornerSize: {
+            type: "Number",
+            description: "The size of the corners in pixels.",
+            required: true
+        },
+        outputWidth: {
+            type: "Number",
+            description: "The width of the output texture in pixels.",
+            required: true
+        },
+        outputHeight: {
+            type: "Number",
+            description: "The height of the output texture in pixels.",
+            required: true
+        }
+    }}
+/>
