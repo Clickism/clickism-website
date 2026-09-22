@@ -3,5 +3,5 @@
   "description": "Documentation for ClickSigns",
   "root": true,
   "icon": "clicksigns",
-  "pages": ["index", "road_signs", "textures", "legacy"]
+  "pages": ["index", "road_signs", "colors", "textures", "packs", "legacy"]
 }

@@ -1,0 +1,51 @@
+---
+title: Colors
+---
+
+Texture pipelines and text elements in ClickSigns can have color properties.
+These all use the same color format, which is described here.
+
+<Callout type="warning">
+    Keep in mind that in case you input an invalid color, the color will default to a **bright red** color.
+</Callout>
+
+
+## Named Colors
+
+The following named colors are available by default:
+- `white`, `black`, `blue`, `green`, `brown`, `red`, `yellow`, `text_light`. `text_dark`.
+
+However, a road sign can have some extra colors defined.
+These are derived from it's texture source's base texture (a static texture or a tileset).
+It is common (and encoruaged) that the textures at least define the following colors:
+
+- `foreground` – The color of the text and symbols that best match this texture and have good contrast.
+
+> If a texture doesn't define `foreground`, ClickSigns will try to decide a good foreground color
+> based on the contrast level with the primary color of the texture.
+> However, this is not always accurate, so pack developers should define a `foreground` color in the texture.
+
+## Hex Colors
+
+You can use hex colors in the format `#rrggbb` or `#aarrggbb`, where `rr`, `gg`, `bb`
+are the red, green, and blue components of the color, and `aa` is the alpha (transparency) component.
+The `#` is optional, so you can also use `rrggbb` or `rrggbbaa`.
+
+<Callout type="idea">
+    Examples: `#42f5ce`, `80f3fa1b`, `#b31bfa`, etc.
+</Callout>
+
+## Color Modifiers
+
+After a color, you can use the following modifiers to change the color:
+- `:a<percentage>` – Adjusts the alpha (transparency) of the color by the given percentage.
+  - `<percentage>` must be `>= 10`, since otherwise the color is almost invisible.
+- `:l<percentage>` – Lightens the color by the given percentage.
+- `:d<percentage>` – Darkens the color by the given percentage.
+
+<Callout type="idea">
+    Examples:
+    - `green:a50` – Green color with 50% transparency.
+    - `black:l20` – Black color lightened by 20%.
+    - `red:d10:a75` - Red color darkened by 10% and with 75% transparency.
+</Callout>
