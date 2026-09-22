@@ -1,0 +1,73 @@
+---
+title: Adding Static Textures
+---
+
+Static textures are located in the `signs/static` folder of your pack.
+
+To add a static texture, simply put your texture file in the `signs/static` folder.
+
+By default, your texture will not have a category (and show up as "Uncategorized").
+It will also not have any color replacements or other texture processors.
+To add texture processors, you need to attach a **static texture definition** to your texture.
+
+### Static Texture Definition
+
+To add a static texture definition, create a json file with the
+same name as your texture file, but replace `.png` with `.static.json`.
+
+import {File, Folder, Files} from "../../../../components/mdx";
+
+<Files>
+    <Folder name="static" defaultOpen>
+        <File name="my_texture.png" />
+        <File name="my_texture.static.json" />
+    </Folder>
+</Files>
+
+A static texture definition can contain a `ColorDefinition`:
+
+```json title=".static.json"
+{
+  "colors": {
+    "foreground": "white",
+    "custom_color": "#4287f5",
+    // ...
+  }
+}
+```
+
+## Adding a Category
+
+To create a new category, all you need is a folder and a `_category.json` file inside
+that folder. All static textures in that folder will then belong to that category.
+
+<Files>
+    <Folder name="my_category" defaultOpen>
+        <File name="_category.json" />
+        <File name="my_texture.png" />
+    </Folder>
+</Files>
+
+And then give a name to your category in the `_category.json` file:
+
+```json title="_category.json"
+{
+  "name": "My Category"
+}
+```
+
+You can also define a default texture definition inside of `_category.json`, so that
+you don't need to create a `.static.json` file for every texture in that category.
+
+> However, a texture definition in a `.static.json` file will always override the default definition in the category.
+
+```json title="_category.json"
+{
+  "name": "My Category",
+  "default": { // [!code ++]
+    "colors": { // [!code ++]
+      "foreground": "white" // [!code ++]
+    } // [!code ++]
+  } // [!code ++]
+}
+```

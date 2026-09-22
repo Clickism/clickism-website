@@ -1,0 +1,66 @@
+---
+title: Sign Packs
+---
+
+This is a guide on the pack format used by ClickSigns.
+A pack (resourcepack) can   be used to add new textures, symbols, and templates to ClickSigns.
+
+> A pack is only needed on the client side, however, for other people to see your textures,
+> they will also need to have the pack installed on their client.
+>
+> Servers can utilize server resourcepacks to automatically send packs to players when they join the server.
+
+## Creating a Pack
+
+Prior experience working with minecraft resourcepacks is recommended.
+
+Your pack needs a unique **namespace**, which is used to identify your pack and its content.
+
+> A namespace must only contain: `a-z`, `0-9`, `-` and `_` characters.
+
+A ClickSigns pack folder has the following structure:
+
+import {File, Folder, Files} from "../../../../components/mdx";
+
+<Files>
+    <Folder name="assets" defaultOpen>
+        <Folder name="<namespace>" defaultOpen>
+            <Folder name="signs" defaultOpen>
+                <Folder name="static" />
+                <Folder name="tilesets" />
+                <Folder name="symbols" />
+                <Folder name="templates" />
+                <File name="pack.json"/>
+            </Folder>
+        </Folder>
+    </Folder>
+    <File name="pack.mcmeta" />
+</Files>
+
+### Pack Metadata
+
+This file is needed by all Minecraft resourcepacks, to define the pack version
+and name. However, since ClickSign packs don't change between minecraft versions, you can
+use the following template:
+
+```json title="pack.mcmeta"
+{
+  "pack": {
+    "description": "My ClickSigns Pack",
+    "pack_format": 6,
+    "min_format": 0,
+    "max_format": 1000000
+  }
+}
+```
+
+### Pack Definition
+
+This is an optional file, that is used to map your **namespace** to a more human-readable
+name, so that it can be displayed a bit nicer in the template list or in other places.
+
+```json title="pack.json"
+{
+  "name": "My ClickSigns Pack"
+}
+```
