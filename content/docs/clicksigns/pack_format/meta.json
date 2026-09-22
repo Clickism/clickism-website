@@ -2,5 +2,6 @@
   "title": "Pack Format",
   "description": "Guide on how to create a sign pack for ClickSigns",
   "icon": "FileBox",
+  "defaultOpen": true,
   "pages": ["index", "static", "tilesets", "symbols", "templates"]
 }
