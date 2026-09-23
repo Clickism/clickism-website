@@ -1,5 +1,32 @@
 ---
-title: Getting Started
+title: What is ClickUI?
+icon: Info
+description: A UI framework like no other. Some might even say, React in Minecraft?
 ---
 
-Work in progress!
+ClickUI is a client-side declarative UI framework designed for Minecraft, completely reimplementing the UI system from scratch.
+It provides a powerful layout engine, a range of predefined UI elements/components, alongside a flexible styling system, and easy event handling.
+
+> Thanks to the layout engine, you no longer need to manually position widgets,
+or create many unnecessary subclasses for every widget and style variation you want!
+
+The layouting system is inspired by web development, and allows you to create complex layouts with ease.
+
+### Simple Counter
+
+Here's a simple example of a counter component that increments a number when a button is clicked:
+
+```java
+public class Counter extends UiComponent<Counter> {
+    private final State<Integer> count = state(0);
+
+    @Override
+    protected void build() {
+        children(
+            text("Count: " + count.get()),
+            button("Increment")
+                .onClick(event -> count.update(c -> c + 1))
+        );
+    }
+}
+```

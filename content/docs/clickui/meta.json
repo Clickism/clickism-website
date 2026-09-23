@@ -3,5 +3,11 @@
   "description": "Documentation for ClickUI",
   "root": true,
   "icon": "clickui",
-  "pages": ["index"]
+  "pages": [
+    "---Introduction---",
+    "index",
+    "---Building UI---",
+    "screen",
+    "..."
+  ]
 }

@@ -1,0 +1,64 @@
+---
+title: Components
+---
+
+## Reactivity and Components
+
+ClickUI has a rich reactivity system, allowing you to create reactive components that automatically
+rebuild themselves when their state changes.
+
+```java
+public class Counter extends UiComponent<Counter> {
+    private final State<Integer> count = state(0);
+
+    @Override
+    protected void build() {
+        children(
+            text("Count: " + count.get()),
+            button("Increment")
+                .onClick(event -> count.update(c -> c + 1))
+        );
+    }
+}
+```
+
+### Refs
+
+You can use refs to reference other components, allowing you to access them easily while keeping
+the clean declarative style of the framework.
+
+```java
+@Override
+protected void build() {
+    Ref<Counter> counterRef = ref();
+    children(
+        new Counter()
+            .ref(counterRef),
+        button("Reset Counter")
+            .onClick(event -> counterRef.get().reset())
+    );
+}
+```
+
+### Memoization
+
+Some components may be expensive to build, or have complex state that shouldn't change often (such as input fields).
+For these cases, there is a built-in memoization system that allows you to cache a component.
+
+There are two ways to use memoization:
+
+- `memo(() -> new MyComponent())` – This will keep the component cached forever.
+- `memo("key", () -> new MyComponent())` – This will keep the component cached until the key changes.
+
+```java
+@Override
+protected void build() {
+    Ref<Counter> counterRef = ref();
+    children(
+        memo(() -> new Counter()
+            .ref(counterRef)),
+        button("Reset Counter")
+            .onClick(event -> counterRef.get().reset())
+    );
+}
+```

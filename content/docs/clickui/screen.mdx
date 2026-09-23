@@ -1,0 +1,53 @@
+---
+title: Screen
+---
+
+You can create a screen by extending the `UiScreen` class and implementing the `build()` method.
+
+```java
+public class MyScreen extends UiScreen<MyScreen> {
+    @Override
+    protected void build() {
+        children(
+            h1("Welcome to ClickUI"),
+            text("ClickUI is an easy to use UI library for Minecraft mods."),
+            box()
+                .horizontal()
+                .growWidth()
+                .childGap(8)
+                .children(
+                    button("Click Me")
+                        .onClick(event -> {
+                            event.player().sendSystemMessage(Component.literal("You clicked the button!"));
+                        })
+                ),
+            box()
+                .scrollable(true)
+                .children(
+                    text("Easy scrollable containers!"),
+                    box()
+                        .width(200)
+                        .height(400)
+                        .padding(16)
+                        .alignCenter()
+                        .style(style()
+                            .backgroundColor(UiColor.BLACK_A50)
+                            .borderColor(UiColor.LIGHT_GRAY))
+                        .children(
+                            text("Scrollable content here."),
+                            text("Pretty neat!")
+                                .style(style()
+                                    .textColor(UiColor.OLIVE)
+                                    .fontScale(2.0f))
+                        )
+                )
+        );
+    }
+}
+```
+
+And to open a screen is as easy as:
+
+```java
+new MyScreen().open();
+```
